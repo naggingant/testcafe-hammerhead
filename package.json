@@ -38,7 +38,20 @@
     "semver": "5.5.0",
     "tough-cookie": "4.0.0",
     "tunnel-agent": "0.6.0",
-    "webauth": "^1.1.0"
+    "webauth": "^1.1.0",
+    "gulp": "^4.0.0",
+    "gulp-clone": "^2.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-ll-next": "^2.1.0",
+    "gulp-mocha-simple": "^1.1.0",
+    "gulp-mustache": "^3.0.1",
+    "gulp-qunit-harness": "^1.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-command": "0.0.9",
+    "gulp-step": "^1.0.1",
+    "gulp-typescript": "^5.0.0",
+    "gulp-uglify": "^1.0.0",
+    "gulp-util": "3.0.6"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
@@ -67,19 +80,6 @@
     "eslint-plugin-no-only-tests": "^2.0.1",
     "express": "4.16.3",
     "express-ntlm": "2.1.5",
-    "gulp": "^4.0.0",
-    "gulp-clone": "^2.0.1",
-    "gulp-eslint": "^6.0.0",
-    "gulp-ll-next": "^2.1.0",
-    "gulp-mocha-simple": "^1.1.0",
-    "gulp-mustache": "^3.0.1",
-    "gulp-qunit-harness": "^1.0.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-run-command": "0.0.9",
-    "gulp-step": "^1.0.1",
-    "gulp-typescript": "^5.0.0",
-    "gulp-uglify": "^1.0.0",
-    "gulp-util": "3.0.6",
     "js-beautify": "^1.13.5",
     "multiline": "^1.0.2",
     "openssl-self-signed-certificate": "1.1.6",
@@ -99,6 +99,9 @@
     "node": ">=14.0.0"
   },
   "files": [
+    "src",
+    "tsconfig.json",
+    "Gulpfile.js",
     "lib",
     "ts-defs"
   ],
@@ -106,6 +109,7 @@
     "test": "gulp travis",
     "publish-please-only": "publish-please",
     "publish-please": "del-cli package-lock.json node_modules && npm i && publish-please",
-    "prepublish": "publish-please guard"
+    "prepublish": "publish-please guard",
+    "prepare": "gulp build"
   }
 }
