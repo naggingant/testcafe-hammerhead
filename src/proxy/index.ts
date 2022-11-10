@@ -211,7 +211,7 @@ export default class Proxy extends Router {
         const windowId    = refererDest && refererDest.windowId || void 0;
 
         if (session) {
-            session.options.referer = referer || session.options.referer;
+            if (!isIframe) session.options.referer = referer || session.options.referer;
 
             res.setHeader(BUILTIN_HEADERS.contentType, 'application/x-javascript');
             addPreventCachingHeaders(res);
